@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Johnny Guitar | Classic Roadhouse</title>
+
+  <meta
+    name="description"
+    content="Johnny Guitar - Alberton's classic retro roadhouse experience."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&family=Rye&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --black: #111111;
+      --near-black: #181818;
+      --cream: #f5f0e8;
+      --warm-white: #faf8f3;
+      --paper: #eee8dc;
+      --brown: #332b25;
+      --brown-light: #675b50;
+      --red: #9d3027;
+      --red-dark: #76231e;
+      --orange: #c66a2c;
+      --teal: #3c7772;
+      --border: #d8d0c4;
+      --max-width: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--warm-white);
+      color: var(--brown);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    section {
+      position: relative;
+    }
+
+    .eyebrow {
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 27px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-dark {
+      background: var(--black);
+      color: white;
+    }
+
+    .button-dark:hover {
+      background: var(--brown);
+    }
+
+    .button-red {
+      background: var(--red);
+      color: white;
+    }
+
+    .button-red:hover {
+      background: var(--red-dark);
+    }
+
+    .button-light {
+      background: var(--cream);
+      color: var(--brown);
+    }
+
+    .button-light:hover {
+      background: white;
+    }
+
+    /* ================= NAVIGATION ================= */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      width: 100%;
+      background: rgba(17, 17, 17, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      width: min(94%, 1250px);
+      min-height: 74px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: #fff;
+      font-family: "Rye", serif;
+      font-size: 1.55rem;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.9);
+      font-family: "Oswald", sans-serif;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-links .nav-cta {
+      background: var(--red);
+      padding: 11px 17px;
+    }
+
+    .nav-links .nav-cta:hover {
+      background: var(--red-dark);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 130px 0 90px;
+      color: white;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(10,10,10,0.85),
+          rgba(10,10,10,0.55),
+          rgba(10,10,10,0.2)
+        ),
+        url("hero-banner.jpg.webp")
+        center / cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero .eyebrow {
+      color: #ddd4c7;
+    }
+
+    .hero h1 {
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(3.2rem, 7vw, 6.8rem);
+      line-height: 0.91;
+      letter-spacing: -1px;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: #eee8df;
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+
+    .opening-hours {
+      border-left: 3px solid rgba(255,255,255,0.8);
+      padding-left: 15px;
+      margin-bottom: 30px;
+      color: #eee8df;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* ================= COMPANY ================= */
+
+    .company-section {
+      padding: 105px 0;
+      background: var(--warm-white);
+    }
+
+    .company-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .company-image img {
+      height: 540px;
+      object-fit: cover;
+    }
+
+    .company-copy h2 {
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      line-height: 0.94;
+      margin-bottom: 25px;
+    }
+
+    .company-copy p {
+      max-width: 600px;
+      color: var(--brown-light);
+      margin-bottom: 18px;
+    }
+
+    /* ================= IMAGE STRIP ================= */
+
+    .image-strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      background: var(--black);
+    }
+
+    .image-strip img {
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    .image-strip img:hover {
+      filter: brightness(1.08);
+      transform: scale(1.025);
+    }
+
+    /* ================= LOCATION ================= */
+
+    .location {
+      padding: 90px 0;
+      background: var(--cream);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 450px;
+    }
+
+    .location-image {
+      background:
+        linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.08)),
+        url("chicken.jpg.jpeg")
+        center / cover;
+    }
+
+    .location-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px;
+      background: var(--black);
+      color: white;
+    }
+
+    .location-copy .eyebrow {
+      color: #bdb4aa;
+    }
+
+    .location-copy h2 {
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(2.7rem, 5vw, 4.5rem);
+      line-height: 0.95;
+      margin-bottom: 22px;
+    }
+
+    .location-copy p {
+      color: #c9c1b8;
+      margin-bottom: 25px;
+      max-width: 500px;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about {
+      padding: 115px 0;
+      background: var(--warm-white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .about-image img {
+      height: 590px;
+      object-fit: cover;
+    }
+
+    .about-copy .brand {
+      font-family: "Rye", serif;
+      color: var(--red);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      margin-bottom: 12px;
+    }
+
+    .about-copy h2 {
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 0.92;
+      margin-bottom: 25px;
+    }
+
+    .about-copy p {
+      color: var(--brown-light);
+      max-width: 610px;
+      margin-bottom: 18px;
+    }
+
+    .about-hours {
+      margin: 30px 0;
+      padding: 18px 20px;
+      border-left: 3px solid var(--red);
+      background: var(--cream);
+      font-size: 0.88rem;
+    }
+
+    /* ================= MENU ================= */
+
+    .menu-section {
+      padding: 110px 0;
+      background: var(--cream);
+    }
+
+    .menu-header {
+      max-width: 850px;
+      margin-bottom: 60px;
+    }
+
+    .menu-header h2 {
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(3rem, 6vw, 5.6rem);
+      line-height: 0.93;
+      margin-bottom: 25px;
+    }
+
+    .menu-header p {
+      color: var(--brown-light);
+      margin-bottom: 14px;
+    }
+
+    .menu-header .eyebrow {
+      color: var(--red);
+    }
+
+    .menu-action {
+      margin-top: 30px;
+    }
+
+    /* ================= FOOD GRID ================= */
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      background: var(--black);
+    }
+
+    .food-grid img {
+      height: 320px;
+      object-fit: cover;
+    }
+
+    /* ================= REVIEWS ================= */
+
+    .reviews {
+      padding: 115px 0;
+      background: var(--warm-white);
+    }
+
+    .reviews-heading {
+      max-width: 700px;
+      margin-bottom: 60px;
+    }
+
+    .reviews-heading h2 {
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      line-height: 0.94;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .review {
+      padding: 32px;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .review-title {
+      font-family: "Oswald", sans-serif;
+      font-size: 1.45rem;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    .review p {
+      color: var(--brown-light);
+      font-size: 0.94rem;
+      margin-bottom: 25px;
+    }
+
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .reviewer-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--teal);
+      color: white;
+      font-family: "Oswald", sans-serif;
+      font-size: 1.1rem;
+    }
+
+    .reviewer-name {
+      font-weight: 700;
+      font-size: 0.86rem;
+    }
+
+    .reviewer-role {
+      color: #8c8379;
+      font-size: 0.76rem;
+    }
+
+    /* ================= FAQ ================= */
+
+    .faq {
+      padding: 110px 0;
+      background: var(--cream);
+    }
+
+    .faq-heading {
+      margin-bottom: 45px;
+    }
+
+    .faq-heading h2 {
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(3rem, 6vw, 5.2rem);
+      line-height: 0.95;
+    }
+
+    .faq-list {
+      max-width: 850px;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    details summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 24px 45px 24px 0;
+      position: relative;
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details summary::after {
+      content: "+";
+      position: absolute;
+      right: 4px;
+      top: 18px;
+      font-size: 1.7rem;
+      color: var(--red);
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details p {
+      max-width: 750px;
+      padding: 0 35px 25px 0;
+      color: var(--brown-light);
+      font-size: 0.92rem;
+    }
+
+    /* ================= FINAL CTA ================= */
+
+    .final-cta {
+      padding: 105px 0;
+      text-align: center;
+      color: white;
+
+      background:
+        linear-gradient(rgba(30,25,22,0.72), rgba(30,25,22,0.72)),
+        url("hero-banner.jpg.webp")
+        center / cover;
+    }
+
+    .final-cta h2 {
+      font-family: "Rye", serif;
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      margin-bottom: 15px;
+    }
+
+    .final-cta p {
+      max-width: 600px;
+      margin: 0 auto 28px;
+      color: #e2dbd1;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: var(--black);
+      color: white;
+      padding: 70px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 45px;
+      padding-bottom: 55px;
+    }
+
+    .footer-brand {
+      font-family: "Rye", serif;
+      font-size: 2.3rem;
+      margin-bottom: 15px;
+    }
+
+    .footer-about {
+      max-width: 320px;
+      color: #a9a19a;
+      font-size: 0.88rem;
+    }
+
+    .footer-column h3 {
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.9rem;
+      margin-bottom: 17px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column li {
+      margin-bottom: 9px;
+      color: #a9a19a;
+      font-size: 0.84rem;
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #77716b;
+      font-size: 0.75rem;
+    }
+
+    /* ================= TABLET ================= */
+
+    @media (max-width: 950px) {
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        left: 0;
+        top: 74px;
+        width: 100%;
+        padding: 10px 6% 20px;
+        background: var(--black);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 15px 0;
+      }
+
+      .nav-links .nav-cta {
+        width: fit-content;
+        padding: 11px 17px;
+        margin-top: 10px;
+      }
+
+      .company-grid,
+      .about-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .location-image {
+        min-height: 420px;
+      }
+
+      .image-strip {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .food-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 600px) {
+
+      .nav-inner {
+        min-height: 67px;
+      }
+
+      .nav-links {
+        top: 67px;
+      }
+
+      .logo {
+        font-size: 1.25rem;
+      }
+
+      .hero {
+        min-height: 800px;
+        padding: 110px 0 70px;
+        background-position: 65% center;
+      }
+
+      .hero h1 {
+        font-size: 3.25rem;
+      }
+
+      .hero p {
+        font-size: 0.88rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .company-section,
+      .about,
+      .menu-section,
+      .reviews,
+      .faq {
+        padding: 75px 0;
+      }
+
+      .company-image img,
+      .about-image img {
+        height: 400px;
+      }
+
+      .image-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .image-strip img {
+        height: 220px;
+      }
+
+      .location {
+        padding: 65px 0;
+      }
+
+      .location-copy {
+        padding: 45px 25px;
+      }
+
+      .location-image {
+        min-height: 300px;
+      }
+
+      .food-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .food-grid img {
+        height: 230px;
+      }
+
+      .review {
+        padding: 25px;
+      }
+
+      .final-cta {
+        padding: 80px 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--red);
+      outline-offset: 4px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header class="navbar">
+
+    <div class="nav-inner">
+
+      <a href="#home" class="logo">
+        Johnny Guitar
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav>
+
+        <ul class="nav-links" id="navLinks">
+
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+
+          <li>
+            <a href="#contact" class="nav-cta">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            Johnny Guitar
+          </div>
+
+          <h1>
+            Order Your Favorite
+            Johnny Guitar Classics
+            Right To You
+          </h1>
+
+          <p>
+            Call, WhatsApp or email Johnny Guitar to order.
+            Enjoy your favourite classic roadhouse meals.
+          </p>
+
+          <div class="opening-hours">
+
+            Open every day from 9:15 am – 8:00 pm.<br>
+            Fridays from 9:15 am – 9:00 pm.
+
+          </div>
+
+          <div class="hero-buttons">
+
+            <a
+              href="tel:+27119070379"
+              class="button button-red"
+            >
+              Call Us
+            </a>
+
+            <a
+              href="mailto:drivein@johnnyguitar.co.za"
+              class="button button-light"
+            >
+              Email Us
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- GOOD FOOD -->
+
+    <section class="company-section">
+
+      <div class="container">
+
+        <div class="company-grid">
+
+          <div class="company-image">
+
+            <img
+              src="burgers.jpg.jpeg"
+              alt="Johnny Guitar food"
+              loading="lazy"
+            >
+
+          </div>
+
+          <div class="company-copy">
+
+            <div class="eyebrow">
+              Good Food • Good Company
+            </div>
+
+            <h2>
+              Enjoy Every Meal
+              With Good Company
+            </h2>
+
+            <p>
+              At Johnny Guitar, good food is meant to be
+              enjoyed with good company.
+            </p>
+
+            <p>
+              Come for the classic roadhouse experience,
+              stay for the food, music and atmosphere.
+            </p>
+
+            <a href="#menu" class="button button-dark">
+              Explore The Menu
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOD STRIP -->
+
+    <section class="image-strip">
+
+      <img src="burger.jpg.jpeg" alt="Smash Burgers">
+
+      <img src="grilledcheese.jpg.jpeg" alt="Grilled Cheese Sandwich">
+
+      <img src="ribs.jpg.jpeg" alt="Sticky Ribs">
+
+      <img src="burgers.jpg.jpeg" alt="Classic Bacon Cheeseburger">
+
+      <img src="sundae.jpg.jpeg" alt="Ice Cream Sundae">
+
+      <img src="chicken.jpg.jpeg" alt="Crispy Fried Chicken and Fries">
+
+    </section>
+
+
+    <!-- LOCATION -->
+
+    <section class="location" id="contact">
+
+      <div class="container">
+
+        <div class="location-grid">
+
+          <div class="location-image"></div>
+
+          <div class="location-copy">
+
+            <div class="eyebrow">
+              Visit Johnny Guitar
+            </div>
+
+            <h2>
+              The Classic
+              Roadhouse
+              Experience
+            </h2>
+
+            <p>
+              57 Voortrekker Rd<br>
+              New Redruth, Alberton<br>
+              1449, Gauteng<br>
+              South Africa
+            </p>
+
+            <a
+              href="https://www.google.com/maps/place/57+Voortrekker+Rd,+New+Redruth,+Alberton,+1449/@-26.2696014,28.1197127,17z/data=!3m1!4b1!4m10!1m2!2m1!1s57+Voortrekker+Rd!3m6!1s0x1e951aa83deadc33:0xe1f38f5c1bbbc356!8m2!3d-26.2696062!4d28.1222876!15sChE1NyBWb29ydHJla2tlciBSZJIBEGdlb2NvZGVkX2FkZHJlc3PgAQA!16s%2Fg%2F11jvdr05f_?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener"
+              class="button button-light"
+            >
+              Find Us On Google Maps
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-image">
+
+            <img
+              src="hero-banner.jpg.webp"
+              alt="Johnny Guitar restaurant exterior and sign"
+              loading="lazy"
+            >
+
+          </div>
+
+          <div class="about-copy">
+
+            <div class="brand">
+              JOHNNY GUITAR
+            </div>
+
+            <h2>
+              Order Classic
+              Roadhouse Favorites
+            </h2>
+
+            <p>
+              Welcome to Johnny Guitar, Alberton's home
+              for the ultimate retro roadhouse experience.
+            </p>
+
+            <p>
+              We're serving classic comfort food, burgers,
+              dagwoods, milkshakes and South African favourites.
+            </p>
+
+            <div class="about-hours">
+
+              <strong>Opening Hours</strong><br>
+
+              Every day: 9:15 am – 8:00 pm<br>
+
+              Fridays: 9:15 am – 9:00 pm
+
+            </div>
+
+            <a
+              href="https://wa.me/27607883766"
+              target="_blank"
+              rel="noopener"
+              class="button button-red"
+            >
+              Order On WhatsApp
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MENU -->
+
+    <section class="menu-section" id="menu">
+
+      <div class="container">
+
+        <div class="menu-header">
+
+          <div class="eyebrow">
+            Eat And Drink
+          </div>
+
+          <h2>
+            Highly Rated Classic Comfort Food
+          </h2>
+
+          <p>
+            Serving tasty dagwoods, burgers,
+            milkshakes and excellent Sunday lunches.
+          </p>
+
+          <p>
+            From classic boerie rolls to hearty meals,
+            Johnny Guitar serves the South African
+            favourites you love.
+          </p>
+
+          <div class="menu-action">
+
+            <a
+              href="https://wa.me/27607883766"
+              target="_blank"
+              rel="noopener"
+              class="button button-red"
+            >
+              Ask About The Menu
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOD GRID -->
+
+    <section class="food-grid">
+
+      <img src="burger.jpg.jpeg" alt="Smash Burgers Basket">
+
+      <img src="grilledcheese.jpg.jpeg" alt="Gourmet Grilled Cheese">
+
+      <img src="ribs.jpg.jpeg" alt="BBQ Ribs with Coleslaw">
+
+      <img src="burgers.jpg.jpeg" alt="Loaded Bacon Cheeseburger">
+
+      <img src="chicken.jpg.jpeg" alt="Crispy Fried Chicken Platter">
+
+    </section>
+
+
+    <!-- REVIEWS -->
+
+    <section class="reviews" id="reviews">
+
+      <div class="container">
+
+        <div class="reviews-heading">
+
+          <div class="eyebrow">
+            Customer Reviews
+          </div>
+
+          <h2>
+            At Johnny Guitar,
+            You're Always
+            Greeted With A Smile.
+          </h2>
+
+        </div>
+
+        <div class="review-grid">
+
+          <article class="review">
+
+            <div class="review-title">
+              One Word: Spectacular!
+            </div>
+
+            <p>
+              "One word, SPECTACULAR!!! We are new to
+              the area and were craving roadhouse food.
+              Googled and came across this roadhouse and
+              decided to try it out."
+            </p>
+
+            <div class="reviewer">
+
+              <div class="reviewer-avatar">R</div>
+
+              <div>
+
+                <div class="reviewer-name">
+                  R B
+                </div>
+
+                <div class="reviewer-role">
+                  Johnny Guitar Customer
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="review">
+
+            <div class="review-title">
+              A Roadhouse Classic
+            </div>
+
+            <p>
+              "There is nothing like this place.
+              Amazing food and milkshakes.
+              Awesome vibe with rock n roll music
+              and very friendly staff."
+            </p>
+
+            <div class="reviewer">
+
+              <div class="reviewer-avatar">L</div>
+
+              <div>
+
+                <div class="reviewer-name">
+                  Louise C
+                </div>
+
+                <div class="reviewer-role">
+                  Johnny Guitar Customer
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="review">
+
+            <div class="review-title">
+              Family Time Done Right
+            </div>
+
+            <p>
+              "On arrival I was greeted warmly and assisted
+              immediately. We tried the Sunday lunch and wow.
+              Definitely worth it!"
+            </p>
+
+            <div class="reviewer">
+
+              <div class="reviewer-avatar">S</div>
+
+              <div>
+
+                <div class="reviewer-name">
+                  Shann.L Reyneke
+                </div>
+
+                <div class="reviewer-role">
+                  Johnny Guitar Customer
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="faq" id="faq">
+
+      <div class="container">
+
+        <div class="faq-heading">
+
+          <div class="eyebrow">
+            Frequently Asked Questions
+          </div>
+
+          <h2>
+            Got A Question?
+          </h2>
+
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+
+            <details>
+
+              <summary>
+                What kind of food do you serve?
+              </summary>
+
+              <p>
+                Johnny Guitar serves classic roadhouse
+                comfort food including burgers, dagwoods,
+                boerie rolls, Sunday lunches and milkshakes.
+              </p>
+
+            </details>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <details>
+
+              <summary>
+                What are your opening hours?
+              </summary>
+
+              <p>
+                Johnny Guitar is open every day from
+                9:15 am to 8:00 pm. On Fridays,
+                we are open until 9:00 pm.
+              </p>
+
+            </details>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <details>
+
+              <summary>
+                Where are you located?
+              </summary>
+
+              <p>
+                We are located at 57 Voortrekker Road,
+                New Redruth, Alberton, 1449,
+                Gauteng, South Africa.
+              </p>
+
+            </details>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <details>
+
+              <summary>
+                How can I place an order?
+              </summary>
+
+              <p>
+                You can call us on 011 907 0379,
+                send us a WhatsApp message,
+                or email drivein@johnnyguitar.co.za.
+              </p>
+
+            </details>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <details>
+
+              <summary>
+                How can I contact Johnny Guitar?
+              </summary>
+
+              <p>
+                Call 011 907 0379, WhatsApp
+                060 788 3766, or email
+                drivein@johnnyguitar.co.za.
+              </p>
+
+            </details>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+
+    <section class="final-cta">
+
+      <div class="container">
+
+        <h2>
+          Johnny Guitar
+        </h2>
+
+        <p>
+          Pull in, grab your favourites and experience
+          a proper South African roadhouse.
+        </p>
+
+        <a
+          href="https://wa.me/27607883766"
+          target="_blank"
+          rel="noopener"
+          class="button button-red"
+        >
+          Order On WhatsApp
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <div class="footer-brand">
+            JOHNNY GUITAR
+          </div>
+
+          <p class="footer-about">
+            Alberton's classic retro roadhouse experience.
+            Good food, good company and a little nostalgia.
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>Explore</h3>
+
+          <ul>
+
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>Contact</h3>
+
+          <ul>
+
+            <li>
+              <a href="tel:+27119070379">
+                011 907 0379
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:drivein@johnnyguitar.co.za">
+                drivein@johnnyguitar.co.za
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://wa.me/27607883766"
+                target="_blank"
+                rel="noopener"
+              >
+                WhatsApp Us
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>Location</h3>
+
+          <ul>
+
+            <li>57 Voortrekker Rd</li>
+            <li>New Redruth</li>
+            <li>Alberton, 1449</li>
+            <li>Gauteng, South Africa</li>
+
+            <li style="margin-top: 15px;">
+
+              <a
+                href="https://www.google.com/maps/place/57+Voortrekker+Rd,+New+Redruth,+Alberton,+1449/@-26.2696014,28.1197127,17z/data=!3m1!4b1!4m10!1m2!2m1!1s57+Voortrekker+Rd!3m6!1s0x1e951aa83deadc33:0xe1f38f5c1bbbc356!8m2!3d-26.2696062!4d28.1222876!15sChE1NyBWb29ydHJla2tlciBSZJIBEGdlb2NvZGVkX2FkZHJlc3PgAQA!16s%2Fg%2F11jvdr05f_?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener"
+              >
+                View on Google Maps
+              </a>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 Johnny Guitar. All rights reserved.
+        </span>
+
+        <span>
+          57 Voortrekker Rd, New Redruth, Alberton, 1449
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- MOBILE NAVIGATION JAVASCRIPT -->
+
+  <script>
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+
+      const isOpen = navLinks.classList.toggle("active");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen
+      );
+
+      menuToggle.textContent =
+        isOpen ? "✕" : "☰";
+
+    });
+
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          navLinks.classList.remove("active");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.textContent = "☰";
+
+        });
+
+      });
+
+
+    document.addEventListener("click", event => {
+
+      const clickedNavigation =
+        navLinks.contains(event.target);
+
+      const clickedButton =
+        menuToggle.contains(event.target);
+
+      if (
+        !clickedNavigation &&
+        !clickedButton &&
+        navLinks.classList.contains("active")
+      ) {
+
+        navLinks.classList.remove("active");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        menuToggle.textContent = "☰";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
